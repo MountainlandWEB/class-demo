@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  items = [
+    { title: 'Numero Uno' },
+    { title: 'Numero Dos' },
+    { title: 'Numero Tres' },
+  ];
 
+  constructor() {}
 }
