@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -8,7 +9,15 @@ import { AlertController } from '@ionic/angular';
 })
 export class Tab3Page {
 
-  constructor(public alert: AlertController) {}
+  constructor(public alert: AlertController, public router: Router) {}
+
+  ionViewWillEnter() {
+    console.log('ionViewWillEnter');
+  }
+
+  navigate(tab: string) {
+    this.router.navigate([`/tabs/${ tab }`]);
+  }
 
   async presentAlert() {
     const alert = await this.alert.create({
