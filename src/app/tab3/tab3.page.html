@@ -33,9 +33,9 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-button id="mybutton" expand="block" size="large">
+  <ion-button id="mybutton" expand="block" size="large" (click)="presentAlert()">
     <ion-icon slot="start" name="star"></ion-icon>
-    Left Icon
+    Present Alert
   </ion-button>
 
   <ion-button expand="block" size="large" (click)="navigate('tab2')">Go to Tab 2</ion-button>
