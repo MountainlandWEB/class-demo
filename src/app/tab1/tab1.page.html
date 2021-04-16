@@ -7,8 +7,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-searchbar debounce="500" [(ngModel)]="searchText" (ionChange)="filterList()"></ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let item of items" [routerLink]="['detail', item.title]">
+    <ion-item *ngFor="let item of filteredItems" [routerLink]="['detail', item.title]">
       <ion-thumbnail slot="start">
         <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
       </ion-thumbnail>

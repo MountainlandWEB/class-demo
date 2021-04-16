@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.simplybest.classdemo;
 
 import android.os.Bundle;
 
