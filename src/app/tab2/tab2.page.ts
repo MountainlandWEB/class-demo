@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Plugins, LocalNotification, LocalNotificationEnabledResult, LocalNotificationActionPerformed, Device } from '@capacitor/core';
+import { Plugins, GeolocationPosition } from '@capacitor/core';
 import { AlertController } from '@ionic/angular';
-const { LocalNotifications } = Plugins;
+const { LocalNotifications, Geolocation } = Plugins;
 
 @Component({
   selector: 'app-tab2',
@@ -10,10 +10,21 @@ const { LocalNotifications } = Plugins;
 })
 export class Tab2Page implements OnInit {
 
+  location: any;
+
   constructor(private alert: AlertController) {}
 
   async ngOnInit() {
     await LocalNotifications.requestPermission();
+
+    Geolocation.watchPosition({}, (position, err) => {
+      this.location = position;
+    });
+  }
+
+  async getLocation() {
+    this.location = await Geolocation.getCurrentPosition();
+    console.log("location", this.location);
   }
 
   async scheduleBasic() {

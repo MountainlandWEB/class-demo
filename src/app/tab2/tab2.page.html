@@ -21,6 +21,11 @@
     Schedule future notification
   </ion-button>
 
+  <ion-button expand=block color=secondary (click)="getLocation()">
+    Get location
+  </ion-button>
   <!-- <ion-button expand="block" (click)="scheduleRepeat()">Repeat notification</ion-button> -->
+
+  <p>Location: {{ location?.coords?.latitude }} {{ location?.coords?.longitude }}</p>
 
 </ion-content>
