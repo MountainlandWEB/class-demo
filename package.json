@@ -10,6 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "sync": "ionic build && npx cap sync",
     "deploy": "ionic build --prod && firebase deploy",
     "resources": "npx pwa-asset-generator ./resources/splash.png ./src/assets -i ./src/index.html -m ./src/manifest.webmanifest -f -h && npx pwa-asset-generator ./resources/icon.png ./src/assets -i ./src/index.html -m ./src/manifest.webmanifest -f -c"
   },

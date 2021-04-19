@@ -13,5 +13,14 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-button expand="block" (click)="scheduleBasic()">
+    Send notification
+  </ion-button>
+
+  <ion-button expand="block" (click)="scheduleAdvanced()">
+    Schedule future notification
+  </ion-button>
+
+  <!-- <ion-button expand="block" (click)="scheduleRepeat()">Repeat notification</ion-button> -->
+
 </ion-content>
